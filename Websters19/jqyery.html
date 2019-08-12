@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+    </style>
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+    </head>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+<div class="table table-responsive table-bordered">
+    <table class="table">
+        <thead>
+        <th colspan="2">Subjects</th>
+        <th colspan="2">First Grading</th>
+        <th colspan="2">Second Grading</th>
+        <th colspan="2">Third Grading</th>
+        <th colspan="2">Fourth Grading</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="2"><input type="text" name="term_1[]" value="t"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_2[]" value="81"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_3[]" value="87"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_4[]" value="81"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_5[]" value="80"
+                                   class="form-control number-only"></td>
+        </tr>
+        <tr>
+            <td colspan="2"><input type="text" name="term_1[]" value="s"
+                                   class="form-control"></td>
+            <td colspan="2"><input type="text" name="term_2[]" value="89"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_3[]" value="83"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_4[]" value="81"
+                                   class="form-control number-only"></td>
+            <td colspan="2"><input type="text" name="term_5[]" value="80"
+                                   class="form-control number-only"></td>
+        </tr>
+        <tr id="average">
+            <td colspan="3">Average</td>
+            <td colspan="2">0</td>
+            <td colspan="2">0</td>
+            <td colspan="2">0</td>
+            <td colspan="2">0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <script type="text/javascript">
+        $('.table :input').on('input', function(e) {
+    var cellIdx = $(this).closest('td').index()+1;
+    alert(cellIdx);
+    var currAvgCell = $("#average td:nth-child(" + cellIdx + ")").get(0);
+    var cellsInput = $(this).closest("table tbody").find("tr:not(:last) td:nth-child(" + cellIdx + ") :input");
+    // reset value
+    currAvgCell.textContent = '0';
+    cellsInput.each(function (key, r) {
+        alert(+r.value);
+    });
+
+    currAvgCell.textContent = +currAvgCell.textContent / +cellsInput.length;
+});
+// comput at dom ready each average
+$('.table tbody tr:first :input').trigger('input');
+    </script>
+</body>
+</html>

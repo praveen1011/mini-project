@@ -1,0 +1,236 @@
+<html>
+<head>
+  <title>Transparent HTML Login Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript">
+    function add(){
+        var v = document.getElementById("from").value;
+        document.getElementById("to").value = parseInt(v)+4;
+    }
+  </script>
+  <style type="text/css">
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+    body {
+    font-family: 'Roboto', sans-serif;
+    background: url(dark.jpg) no-repeat center center fixed;
+    background-size: cover;
+    }
+    .container {
+    position: relative;
+    top : 40px;
+    width: 600px;
+    height: 570px;
+    background-color: #434e5a;
+    opacity: .9;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    }
+    .lcontainer{
+    top: 25px;
+    width: 300px;
+    height: 570px;
+    background-color: #434e5a;
+    opacity: .9;
+    border-radius: 10px;
+    display: flex;
+    position: fixed;
+    right: 9px;
+    }
+    .user-img img {
+    height: 100px;
+    width: 100px;
+    }
+    img{
+    height: 150px;
+    width: 150px;
+
+    }
+    .user-img {
+    margin-top: -40px;
+    margin-bottom: 45px;
+    }
+    p {
+    color: #daf1ff;
+    }
+    h3{
+        color: #daf1ff;
+    }
+    .form-input button {
+    width: 40%;
+    margin: 5px 0 25px;
+    }
+    .btn-success {
+    background-color: #1c6288;
+    font-size: 19px;
+    border-radius: 5px;
+    padding: 7px 14px;
+    border: 1px solid #daf1ff;
+    }
+    .btn-success:hover {
+    background-color: #13445e;
+    border: 1px solid #daf1ff;
+    }
+    select.dd{
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(book.png) 96% / 15% no-repeat #eee;
+}
+select.dd1{
+  width: 300px;
+  padding: 5px 35px 5px 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(book.png) 98% / 9% no-repeat #eee;
+}
+
+select::-ms-expand { 
+    display: none;
+}
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}
+a {
+    color: #daf1ff;
+}
+h5{
+    color: #daf1ff;
+}
+ </style>
+</head>
+<body>
+<script src="jquery-3.4.1.min.js"></script>
+<div class = "container text-centered">
+<div class = "col-sm-12 main-section">
+    <form id = "admin" method="get">
+    <div class="form-row">
+            <div class="col-sm-4 user-img "><img src="admin.png"></div>
+    <div class="col-8 ">
+                <h3>Admin Login Portal</h3>
+    </div>
+    </div>
+    <div class="form-row">
+        <div class="col col-md-6">
+                    <input type="text" class="form-control" id="from" name="from" placeholder="From Year" onchange="add()">
+        </div>
+        <div class="col col-md-6">
+                <input type="text" class="form-control" id="to" name="to" placeholder="To Year">
+    </div>
+        </div>
+        <br>
+        <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <p>Branch :</p>
+                            <select id="branch" class="dd" name="branch" onChange="hlo()">
+                                <option value="" selected>- Select -</option>
+                                <option value="IT">IT</option>
+                                <option value="CSE">CSE</option>
+                                <option value="MECH">MECH</option>
+                                <option value="CIVIL">CIVIL</option>
+                                <option value="CE">CE</option>
+                                <option value="ECE">ECE</option>
+                                <option value="EEE">EEE</option>
+                            </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <p>Operation : </p>
+                            <select id="opn" class="dd">
+                                <option value="" selected>- Select -</option>
+                                <option value="Create">Create</option>
+                                <option value="Delete">Delete</option>
+                                <option value="Logins">Logins</option>
+                                <option value="Attendance">Attendance</option>
+                                <option value="Mid-1">Mid-1</option>
+                                <option value="Mid-2">Mid-2</option>
+                                <option value="Final">Final marks Sheet</option>
+                            </select>
+                    </div>
+                    </div>
+                    <br>
+        <div class="form-row">
+                <div class="col col-md-6">
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Username">
+                </div>
+                <div class="col col-md-6">
+                    <input type="password" class="form-control" id="psd" name="psd" placeholder="Password">
+                </div>
+        </div>
+        <br>
+        <div class="form-group col-md-12">
+                    <center><button class="btn btn-success" onclick="decide()" id = "submit"/>Login</button></center>
+        </div>
+    </form>
+    </div>
+    </div>
+    <script type="text/javascript">
+    function decide(){
+        var dec = document.getElementById("opn").value;
+     
+      if(dec == "Create")
+        {
+            alert("i am here");
+        var at = document.getElementById("admin");
+        at.action = "create.jsp";
+        at.submit();
+        }
+      else if(dec == "Delete")
+        {
+        var m1 = document.getElementById("admin");
+        m1.action = "delete.jsp";
+        m1.submit();
+        }
+      else if(dec == "Logins")
+        {
+        var m2 = document.getElementById("admin");
+        m2.action = "logins.jsp";
+        m2.submit();
+        }
+        else if(dec == "Attendance")
+        {
+        var m2 = document.getElementById("admin");
+        m2.action = "view.jsp";
+        m2.submit();
+        }
+        else if(dec == "Mid-1")
+        {
+        var m2 = document.getElementById("admin");
+        m2.action = "m1view.jsp";
+        m2.submit();
+        }
+        else if(dec == "Mid-2")
+        {
+        var m2 = document.getElementById("admin");
+        m2.action = "m2view.jsp";
+        m2.submit();
+        }
+        else if(dec == "Final")
+        {
+        var m2 = document.getElementById("admin");
+        m2.action = "fview.jsp";
+        m2.submit();
+        }
+        }
+    </script>
+    </body>
+    </html>

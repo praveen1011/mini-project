@@ -1,0 +1,49 @@
+<html>
+<head>
+<style>
+</style>
+<link rel="stylesheet" href="test.css" />
+<script type="text/javascript" src="data.js"></script>
+<script type="text/javascript">
+    function add(){
+        var v = document.getElementById("from").value;
+        document.getElementById("to").value = parseInt(v)+4;
+    }
+</script>
+</head>
+<body>
+<script src="jquery-3.4.1.min.js"></script>
+    <form action="tlogin.jsp" method="get">
+        <img src = "logo.jpg" id = "logo"/>
+        <p class = "from">From :</p> <input name="from" type="text" id = "from" onchange="add()" ><br>
+        <br>
+        <p class = "to">To :</p><input name="to" type="text" id = "to" ><br>
+        <br>
+        <p class = "tos">Type of subject :</p>
+        <select id="tos" onChange = 'hlo()'>
+        <option value="" selected>- Select -</option>
+        <option value="General">General</option>
+        <option value="Skill based lab elective">Skill based lab elective</option>
+        <option value="Open elective">Open elective</option>
+        <option value="Free elective">Free elective</option>
+        </select>
+        <p class = "branch">Branch :</p><select id="branch" name="branch" onChange="hlo()">
+        <option value="" selected>- Select -</option>
+        <option value="IT">IT</option>
+        <option value="CSE">CSE</option>
+        <option value="MECH">MECH</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="CE">CE</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        </select>
+        <p class = "subs">Subjects :</p>
+        <select id="change" name="change">
+        <option>select above options</option>
+        </select>
+        <p id = "admin">login through here for admin previlages :</p>
+        <a href="admin.html" id = "adm">admin login</a>
+        <input type="submit" value="Submit" id = "submit"/>
+    </form>
+    </body>
+    </html>

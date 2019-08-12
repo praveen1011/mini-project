@@ -1,0 +1,245 @@
+<html>
+<head>
+  <title>Transparent HTML Login Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script type="text/javascript" src="data.js"></script>
+  <script type="text/javascript">
+    function add(){
+        var v = document.getElementById("from").value;
+        document.getElementById("to").value = parseInt(v)+4;
+    }
+  </script>
+  <style type="text/css">
+  	@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+	body {
+	font-family: 'Roboto', sans-serif;
+	background: url(mountain.png) no-repeat center center fixed;
+	background-size: cover;
+	}
+  	.container {
+  	position: relative;
+  	top : 25px;
+  	width: 600px;
+  	height: 570px;
+    background-color: #434e5a;
+	opacity: .9;
+	border-radius: 10px;
+    display: flex;
+    align-items: center;
+	}
+	.lcontainer{
+  	top: 25px;
+  	width: 300px;
+  	height: 570px;
+    background-color: #434e5a;
+	opacity: .9;
+	border-radius: 10px;
+    display: flex;
+    position: fixed;
+    right: 9px;
+	}
+	.user-img img {
+	height: 100px;
+	width: 100px;
+	}
+	img{
+	height: 150px;
+	width: 150px;
+
+	}
+	.user-img {
+	margin-top: -40px;
+	margin-bottom: 45px;
+	}
+	p {
+	color: #daf1ff;
+	}
+	h3{
+		color: #daf1ff;
+	}
+	.form-input button {
+	width: 40%;
+	margin: 5px 0 25px;
+	}
+	.btn-success {
+	background-color: #1c6288;
+	font-size: 19px;
+	border-radius: 5px;
+	padding: 7px 14px;
+	border: 1px solid #daf1ff;
+	}
+	.btn-success:hover {
+	background-color: #13445e;
+	border: 1px solid #daf1ff;
+	}
+	select.dd{
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(book.png) 96% / 15% no-repeat #eee;
+}
+select.dd1{
+  width: 300px;
+  padding: 5px 35px 5px 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  height: 30px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(book.png) 98% / 9% no-repeat #eee;
+}
+
+select::-ms-expand { 
+    display: none;
+}
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}
+a {
+	color: #daf1ff;
+}
+h6{
+	color: skyblue;
+}
+ </style>
+</head>
+<body>
+	<div class = "container text-centered">
+		<div class = "col-sm-12 main-section">
+			<form  id = "test" action="test.jsp" method="get">
+			<div class="form-row">
+				<div class="col-sm-4 user-img "><img src="logo.PNG"></div>
+			<div class="col-8 ">
+					<h3>Faculty Login Portal</h3>
+			</div>
+			</div>
+			<div class = "col-sm-12 form-group">
+				    <div class="form-row">
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="from" name="from" placeholder="From Year" onchange="add()">
+    				</div>
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="to" name="to" placeholder="To Year">
+    				</div>
+  					</div>
+  					<br>
+  					<div class="form-row">
+    				<div class="form-group col-md-4">
+      					<p>Branch:</p>
+      						<select id="branch" class="dd" name="branch" onChange="hlo()">
+      					        <option value="" selected>- Select -</option>
+        						<option value="IT">IT</option>
+        						<option value="CSE">CSE</option>
+        						<option value="MECH">MECH</option>
+        						<option value="CIVIL">CIVIL</option>
+        						<option value="CE">CE</option>
+        						<option value="ECE">ECE</option>
+        						<option value="EEE">EEE</option>
+        					</select>
+    				</div>
+    				<div class="form-group col-md-2">
+    				</div>
+    				<div class="form-group col-md-6">
+      					<p>Type of Subject:</p>
+      						<select id="tos" class="dd" onChange = 'hlo()'>
+        						<option value="" selected>- Select -</option>
+        						<option value="General">General</option>
+        						<option value="Skill based lab elective">Skill based lab elective</option>
+        						<option value="Open elective">Open elective</option>
+        						<option value="Free elective">Free elective</option>
+        					</select>
+    				</div>
+  					</div>
+  					<br>
+  					<div class="form-row col-md-12">
+  						<p class = "subs">Subjects :  </p>&nbsp&nbsp
+        				<select id="change" class="dd1" name="change">
+        				<option>select above options</option>
+        				</select>
+  					</div>
+  					<br>
+  					<div class="form-row">
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="uid" name="uid" placeholder="Username">
+    				</div>
+    				<div class="col col-md-6">
+      					<input type="password" class="form-control" id="psw" name="psw" placeholder="Password">
+    				</div>
+  					</div>
+  					<br>
+  					<div class="col-md-12 form-row">
+  						<div class="form-group col-md-8 form-row">
+  						<h6>Choose :   </h6> &nbsp&nbsp
+  						<select id = "selec" class="dd">
+    					<option value = "attend">attendance</option>
+    					<option value = "mid1" >Marks(mid - 1)</option>
+    					<option value = "mid2">Marks(mid - 2)</option>
+  						</select>
+					</div>
+					<div class="form-group col-md-4">
+  					<center><button class="btn btn-success" onclick="decide()" id = "submit"/>Login</button></center>
+  					</div>
+  					</div>
+			</div>
+		</form>
+		</div>
+	</div>
+	<div class="lcontainer text-centered">
+		<div class="col-sm-12 main-section">
+			<div class="col-md-12 form-row">
+				<a href="admin.html"><img src="admin.png"></a>
+				<h6>Admin login : </h6>&nbsp&nbsp
+				<a href="admin.html">Click here!!!</a>
+			</div>
+			<div class="col-md-12 form-row">
+				<a href="register.html" ><img src="register.png"></a>
+				<h6>Register Subjects : </h6>&nbsp&nbsp
+				<a href="">Click here!!!</a>
+			</div>
+			<div class="col-md-12 form-row">
+				<a href="change.html" ><img src="forgot-password.png"></a>
+				<h6>Change Password : </h6>&nbsp&nbsp
+				<a href="change.html">Click here!!!</a>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+  	function decide(){
+  		var dec = document.getElementById("selec").value;
+     
+      if(dec == "attend")
+        {
+        var at = document.getElementById("test");
+        at.action = "test.jsp";
+        at.submit();
+        }
+      else if(dec == "mid1")
+        {
+        var m1 = document.getElementById("test");
+        m1.action = "mid1.jsp";
+        m1.submit();
+        }
+      else
+        {
+        var m2 = document.getElementById("test");
+        m2.action = "mid2.jsp";
+        m2.submit();
+        }
+        }
+  </script>
+</body>
+</html>

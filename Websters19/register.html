@@ -1,0 +1,191 @@
+<html>
+<head>
+  <title>Transparent HTML Login Form</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+  <script type="text/javascript" src="register.js"></script>
+  <script type="text/javascript">
+    function add(){
+        var v = document.getElementById("from").value;
+        document.getElementById("to").value = parseInt(v)+4;
+    }
+  </script>
+  <style type="text/css">
+  	@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+	body {
+	font-family: 'Roboto', sans-serif;
+	background: url(mountain.png) no-repeat center center fixed;
+	background-size: cover;
+	}
+  	.container {
+  	position: relative;
+  	top : 25px;
+  	width: 600px;
+  	height: 570px;
+    background-color: #434e5a;
+	opacity: .9;
+	border-radius: 10px;
+    display: flex;
+    align-items: center;
+	}
+	.lcontainer{
+  	top: 25px;
+  	width: 300px;
+  	height: 570px;
+    background-color: #434e5a;
+	opacity: .9;
+	border-radius: 10px;
+    display: flex;
+    position: fixed;
+    right: 9px;
+    margin-top: 10px ; 
+	}
+	.user-img img {
+	height: 100px;
+	width: 100px;
+	}
+	img{
+	height: 150px;
+	width: 150px;
+
+	}
+	.user-img {
+	margin-top: -40px;
+	margin-bottom: 45px;
+	}
+	p {
+	color: #daf1ff;
+	}
+	h3{
+		color: #daf1ff;
+	}
+	.form-input button {
+	width: 40%;
+	margin: 5px 0 25px;
+	}
+	.btn-success {
+	background-color: #1c6288;
+	font-size: 19px;
+	border-radius: 5px;
+	padding: 7px 14px;
+	border: 1px solid #daf1ff;
+	}
+	.btn-success:hover {
+	background-color: #13445e;
+	border: 1px solid #daf1ff;
+	}
+	select.dd{
+  width: 200px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+select.dd1{
+  width: 250px;
+  padding: 5px 35px 5px 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  height: 350px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand { 
+    display: none;
+}
+@media screen and (min-width:0\0) {
+    select {
+        background:none\9;
+        padding: 5px\9;
+    }
+}
+a {
+	color: #daf1ff;
+}
+h6{
+	color: skyblue;
+}
+ </style>
+</head>
+<body>
+  <form  id = "test" action="register.jsp" method="get">
+	<div class = "container text-centered">
+		<div class = "col-sm-12 main-section">
+			<div class="form-row">
+				<div class="col-sm-4 user-img "><img src="logo.PNG"></div>
+			<div class="col-8 ">
+					<h3>Faculty Login Portal</h3>
+			</div>
+			</div>
+			<div class = "col-sm-12 form-group">
+				    <div class="form-row">
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="from" name="from" placeholder="From Year" onchange="add()">
+    				</div>
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="to" name="to" placeholder="To Year">
+    				</div>
+  					</div>
+  					<br>
+  					<div class="form-row">
+    				<div class="form-group col-md-4">
+      					<p>Branch:</p>
+      						<select id="branch" class="dd" name="branch" onChange="hlo()">
+      					        <option value="" selected>- Select -</option>
+        						<option value="IT">IT</option>
+        						<option value="CSE">CSE</option>
+        						<option value="MECH">MECH</option>
+        						<option value="CIVIL">CIVIL</option>
+        						<option value="CE">CE</option>
+        						<option value="ECE">ECE</option>
+        						<option value="EEE">EEE</option>
+        					</select>
+    				</div>
+    				<div class="form-group col-md-2">
+    				</div>
+    				<div class="form-group col-md-6">
+      					<p>Type of Subject:</p>
+      						<select id="tos" class="dd" onChange = 'hlo()'>
+        						<option value="" selected>- Select -</option>
+        						<option value="General">General</option>
+        						<option value="Skill based lab elective">Skill based lab elective</option>
+        						<option value="Open elective">Open elective</option>
+        						<option value="Free elective">Free elective</option>
+        					</select>
+    				</div>
+  					</div>
+  					<br>
+  					<div class="form-row">
+    				<div class="col col-md-6">
+      					<input type="text" class="form-control" id="uid" name="uid" placeholder="Username">
+    				</div>
+    				<div class="col col-md-6">
+      					<input type="password" class="form-control" id="psw" name="psw" placeholder="Password">
+    				</div>
+  					</div>
+  					<br>
+					   <div class="form-row col-md-12">
+  					<center><button class="btn btn-success" value="submit" id = "submit"/>Register</button></center>
+  					</div>
+		</div>
+	</div>
+    <div class="lcontainer text-centered">
+    <div class="col-sm-12 main-section">
+      <p class = "subs">Subjects :  </p>&nbsp&nbsp
+                <select id="change" class="dd1" name="change" multiple size="15">
+                <option>select all options</option>
+                </select>
+    </div>
+    </div>
+</form>
+</body>
+</html>
